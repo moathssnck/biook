@@ -1,127 +1,352 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>مدونة التأمين | شروط وأحكام | سياسة الخصوصية</title>
-    <style>
-      body {
-        font-family: sans-serif;
-        line-height: 1.7;
-        background: #f8f8f8;
-        margin: 0;
-        padding: 20px;
-      }
-      .container {
-        max-width: 900px;
-        margin: auto;
-        background: #fff;
-        padding: 25px;
-        border-radius: 8px;
-      }
-      h1,
-      h2,
-      h3 {
-        margin-top: 40px;
-      }
-      nav a {
-        margin-left: 10px;
-        text-decoration: none;
-        color: #0066cc;
-      }
-      nav {
-        margin-bottom: 25px;
-      }
-    </style>
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0e7490" />
+  <title>مدونة التأمين | شروط وأحكام | سياسة الخصوصية</title>
+  <meta name="description" content="مدونة متخصصة في تأمين السيارات مع صفحة شروط وأحكام وسياسة خصوصية متوافقة مع المتطلبات الإعلانية. نصوص واضحة وروابط قانونية وبنية احترافية." />
+  <link rel="canonical" href="https://sectaminks/insurance-blog" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="مدونة التأمين | شروط وأحكام | سياسة الخصوصية" />
+  <meta property="og:description" content="مدونة تأمين سيارات مع سياسة خصوصية وشروط استخدام واضحة." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sectaminks/insurance-blog" />
+  <meta property="og:image" content="https://sectaminks/og-image.jpg" />
+  <style>
+    :root{
+      --bg:#0b1220; --bg-soft:#0f172a; --card:#0b2136; --text:#e5e7eb; --muted:#a3a3a3;
+      --brand:#0ea5e9; --brand-2:#06b6d4; --ok:#16a34a; --warn:#f59e0b; --danger:#ef4444;
+      --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.20);
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f6f7fb; --bg-soft:#ffffff; --card:#ffffff; --text:#0f172a; --muted:#6b7280; }
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0; font-family:"Tajawal", system-ui, -apple-system, Segoe UI, Roboto, "Noto Naskh Arabic", Arial, sans-serif; background:var(--bg); color:var(--text)}
+    a{color:var(--brand); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1120px; margin-inline:auto; padding:24px}
+    header{position:sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background:color-mix(in oklab, var(--bg-soft) 92%, transparent); border-bottom:1px solid rgba(255,255,255,.06); z-index:50}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .logo{display:flex; align-items:center; gap:10px; font-weight:800}
+    .logo-badge{width:34px; height:34px; border-radius:12px; background:linear-gradient(135deg,var(--brand),var(--brand-2)); display:grid; place-items:center; color:#fff; box-shadow:var(--shadow)}
+    .menu{display:flex; gap:18px; flex-wrap:wrap}
+    .btn{display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border-radius:12px; border:1px solid rgba(255,255,255,.10); background:linear-gradient(180deg, color-mix(in oklab, var(--card) 92%, transparent), color-mix(in oklab, var(--card) 96%, transparent)); box-shadow:var(--shadow)}
+    .btn:hover{transform:translateY(-1px)}
 
-  <body>
-    <div class="container">
-      <nav>
-        <a href="#blog">المدونة</a>
-        <a href="#terms">الشروط والأحكام</a>
-        <a href="#privacy">سياسة الخصوصية</a>
+    .hero{padding:42px 0 16px}
+    .hero .grid{display:grid; grid-template-columns: 1.3fr 1fr; gap:24px}
+    @media (max-width: 960px){ .hero .grid{grid-template-columns: 1fr} }
+    .panel{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:24px}
+    .panel h1{margin:8px 0 12px; font-size:clamp(24px, 2.2vw, 36px)}
+    .muted{color:var(--muted)}
+
+    .cards{display:grid; grid-template-columns: repeat(3, 1fr); gap:18px}
+    @media (max-width: 960px){ .cards{grid-template-columns: 1fr} }
+    .card{background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:var(--radius); padding:20px; display:flex; flex-direction:column; gap:10px}
+    .card h3{margin:0}
+
+    section{scroll-margin-top:90px}
+    h2{margin-top:30px}
+    ul{margin:8px 0 16px}
+    li{margin:6px 0}
+
+    .toc{display:flex; gap:10px; flex-wrap:wrap}
+    .toc a{padding:8px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.10); background:var(--bg-soft)}
+
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; background:rgba(255,255,255,.07); padding:2px 6px; border-radius:6px}
+
+    .badge{display:inline-block; padding:4px 10px; border-radius:999px; background:rgba(14,165,233,.12); color:var(--brand)}
+    .note{border-inline-start:4px solid var(--brand); padding:12px 14px; background:rgba(14,165,233,.08); border-radius:10px}
+
+    footer{margin-top:40px; padding:24px; border-top:1px solid rgba(255,255,255,.06); background:var(--bg-soft)}
+    .footer-grid{display:grid; grid-template-columns: 2fr 1fr 1fr; gap:18px}
+    @media (max-width: 960px){ .footer-grid{grid-template-columns: 1fr} }
+
+    .small{font-size:.92rem}
+    .xsmall{font-size:.84rem}
+
+    /* Print */
+    @media print{
+      header,.toc,.cookie{display:none}
+      body{background:#fff; color:#000}
+      .panel,.card{box-shadow:none; border:1px solid #ddd}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "مدونة التأمين",
+    "url": "https://sectaminks/insurance-blog",
+    "publisher": {
+      "@type": "Organization",
+      "name": "شركة مثال للتأمين",
+      "logo": {"@type":"ImageObject","url":"https://sectaminks/logo.png"}
+    }
+  }
+  </script>
+</head>
+<body>
+  <a class="xsmall" href="#main" style="position:absolute;inset-inline-start:8px; top:-40px; padding:8px 12px; background:#111; color:#fff; border-radius:8px">تخطي إلى المحتوى</a>
+  <header>
+    <div class="container nav" role="navigation" aria-label="روابط رأس الصفحة">
+      <div class="logo" aria-label="الشعار">
+        <div class="logo-badge" aria-hidden="true">⚑</div>
+        <span>مدونة التأمين</span>
+      </div>
+      <nav class="menu" aria-label="القائمة الرئيسية">
+        <a href="#blog" class="btn" aria-label="الانتقال إلى المدونة">المدونة</a>
+        <a href="#terms" class="btn" aria-label="الانتقال إلى الشروط والأحكام">الشروط والأحكام</a>
+        <a href="#privacy" class="btn" aria-label="الانتقال إلى سياسة الخصوصية">سياسة الخصوصية</a>
+        <a href="#contact" class="btn" aria-label="الانتقال إلى تواصل">تواصل</a>
       </nav>
-
-      <h1>مدونة التأمين</h1>
-      <section id="blog">
-        <h2>مقدمة</h2>
-        <p>
-          تهدف هذه المدونة إلى توضيح أهم المفاهيم المتعلقة بتأمين السيارات
-          وأنواع التغطيات المتاحة، بما يساعد المستخدم في اتخاذ قرار شراء التأمين
-          بشكل مدروس وواضح.
-        </p>
-
-        <h2>أنواع تأمين السيارات</h2>
-        <p>
-          يشمل التأمين ضد الغير، التأمين الشامل، وخدمات المساعدة على الطريق. كل
-          نوع يقدم مستوى حماية مختلف حسب احتياجات المستخدم.
-        </p>
-
-        <h2>كيفية اختيار التأمين المناسب</h2>
-        <ul>
-          <li>تحديد نوع التغطية المطلوبة.</li>
-          <li>مقارنة الأسعار بين الشركات.</li>
-          <li>التحقق من شروط الوثيقة والاستثناءات.</li>
-        </ul>
-      </section>
-
-      <section id="terms">
-        <h1>الشروط والأحكام</h1>
-        <p>باستخدامك لهذا الموقع فأنت توافق على الشروط التالية:</p>
-
-        <h3>١. استخدام الموقع</h3>
-        <p>
-          يحق لك استخدام الموقع فقط للأغراض القانونية وعدم محاولة إساءة استخدام
-          المحتوى أو الأنظمة.
-        </p>
-
-        <h3>٢. دقة المعلومات</h3>
-        <p>
-          نبذل جهدنا لتوفير معلومات دقيقة لكن لا نضمن خلو المحتوى من الأخطاء.
-        </p>
-
-        <h3>٣. الروابط الخارجية</h3>
-        <p>
-          قد يحتوي الموقع على روابط لمواقع خارجية. نحن غير مسؤولين عن محتوى تلك
-          المواقع أو سياساتها.
-        </p>
-
-        <h3>٤. التحديثات</h3>
-        <p>
-          قد يتم تعديل الشروط في أي وقت. استمرارك في استخدام الموقع يعني قبول
-          التعديلات.
-        </p>
-      </section>
-
-      <section id="privacy">
-        <h1>سياسة الخصوصية</h1>
-
-        <h3>١. المعلومات التي نجمعها</h3>
-        <p>
-          قد نقوم بجمع بيانات أساسية مثل: الاسم، رقم الهاتف، واستخدام الموقع.
-        </p>
-
-        <h3>٢. كيفية استخدام البيانات</h3>
-        <p>
-          تستخدم البيانات لتحسين الخدمة، تنفيذ طلبات المستخدم، والتواصل عند
-          الضرورة.
-        </p>
-
-        <h3>٣. مشاركة البيانات</h3>
-        <p>
-          لا يتم بيع أو مشاركة البيانات مع أي طرف ثالث إلا بما يقتضيه القانون.
-        </p>
-
-        <h3>٤. ملفات تعريف الارتباط (Cookies)</h3>
-        <p>نستخدم ملفات الكوكيز لتحسين تجربة التصفح وتحليل الأداء.</p>
-
-        <h3>٥. حماية البيانات</h3>
-        <p>نطبق إجراءات تقنية للحد من الوصول غير المصرح به.</p>
-
-        <h3>٦. حقوق المستخدم</h3>
-        <p>يحق لك طلب تحديث أو حذف بياناتك الشخصية بالتواصل عبر صفحة الدعم.</p>
-      </section>
     </div>
-  </body>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero">
+      <div class="grid">
+        <div class="panel">
+          <span class="badge" aria-label="علامة تعريف">محتوى موثوق</span>
+          <h1>تأمين سيارات واضح وبسياسة خصوصية شفافة</h1>
+          <p class="muted">صفحة احترافية تضم المدونة، الشروط والأحكام، وسياسة الخصوصية بصياغة متوافقة مع متطلبات المنصات الإعلانية.</p>
+          <div class="toc" aria-label="فهرس سريع">
+            <a href="#blog">المقالات</a>
+            <a href="#faq">الأسئلة الشائعة</a>
+            <a href="#terms">الشروط</a>
+            <a href="#privacy">الخصوصية</a>
+            <a href="#cookies">الكوكيز</a>
+          </div>
+        </div>
+        <aside class="panel" aria-label="معلومات مختصرة">
+          <h2 style="margin-top:0">ملخص المتطلبات القانونية</h2>
+          <ul class="small">
+            <li>روابط ظاهرة إلى <a href="#terms">الشروط</a> و<a href="#privacy">الخصوصية</a>.</li>
+            <li>تحديد غرض جمع البيانات وقاعدة المعالجة.</li>
+            <li>آلية طلب حذف أو تحديث البيانات.</li>
+            <li>إشعار الكوكيز مع خيار قبول/رفض.</li>
+          </ul>
+          <p class="note small">نصوص هذه الصفحة إرشادية عامة وليست استشارة قانونية. عدّل أسماء الشركة وقنوات الاتصال حسب نشاطك.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog" aria-labelledby="blog-title">
+      <h2 id="blog-title">المدونة</h2>
+      <div class="cards" role="list">
+        <article class="card" role="listitem" itemscope itemtype="https://schema.org/BlogPosting">
+          <meta itemprop="author" content="فريق التحرير" />
+          <h3 itemprop="headline">أنواع تغطية تأمين السيارات</h3>
+          <p class="muted xsmall">نُشر في <time itemprop="datePublished" datetime="2025-11-06">6 نوفمبر 2025</time></p>
+          <p itemprop="description">التأمين ضد الغير، التأمين الشامل، المساعدة على الطريق. الفرق الجوهري هو نطاق التعويض وحدود الاستثناءات.</p>
+          <ul>
+            <li><span class="kbd">طرف ثالث</span>: يغطي أضرار الأطراف الأخرى فقط.</li>
+            <li><span class="kbd">شامل</span>: يشمل مركبتك، السرقة، الحريق، والكوارث وفق الوثيقة.</li>
+            <li><span class="kbd">مساعدة</span>: قطر، تشغيل بطارية، تبديل إطارات.</li>
+          </ul>
+        </article>
+        <article class="card" role="listitem" itemscope itemtype="https://schema.org/BlogPosting">
+          <h3 itemprop="headline">كيف تختار وثيقة مناسبة</h3>
+          <p class="muted xsmall">نُشر في <time itemprop="datePublished" datetime="2025-11-06">6 نوفمبر 2025</time></p>
+          <p>قارن حدود التغطية، نسبة التحمل، شبكة الإصلاح، وخدمة المطالبات. راجع الاستثناءات بدقة.</p>
+          <ul>
+            <li>حدود المسؤولية الدنيا المقترحة: بما يتوافق مع تنظيم بلدك.</li>
+            <li>اسأل عن الإصلاح بوكيل مقابل ورش معتمدة.</li>
+            <li>تأكد من آلية المطالبة والزمن المستهدف للمعالجة.</li>
+          </ul>
+        </article>
+        <article class="card" role="listitem" itemscope itemtype="https://schema.org/BlogPosting">
+          <h3 itemprop="headline">خفض التكلفة دون الإخلال بالحماية</h3>
+          <p class="muted xsmall">نُشر في <time itemprop="datePublished" datetime="2025-11-06">6 نوفمبر 2025</time></p>
+          <p>اختر نسبة تحمل مناسبة، اربط الوثيقة بخدمات منع الاحتيال، وراجع خصومات السائق الجيد.</p>
+          <p class="xsmall muted">تنبيه: لا تخفض التغطية القانونية الإلزامية.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">الأسئلة الشائعة</h2>
+      <details class="panel">
+        <summary><strong>كيف أقدّم مطالبة بشكل صحيح؟</strong></summary>
+        <ol class="small">
+          <li>أمّن المكان واتصل بالطوارئ عند الحاجة.</li>
+          <li>وثّق الحادث بالصور والوقت والموقع.</li>
+          <li>أبلغ الشركة خلال المهلة المحددة في الوثيقة.</li>
+        </ol>
+      </details>
+      <details class="panel">
+        <summary><strong>متى يبدأ سريان الوثيقة؟</strong></summary>
+        <p class="small">عادة من تاريخ الإصدار أو التاريخ المحدد في ملخص الوثيقة بعد تحصيل القسط.</p>
+      </details>
+    </section>
+
+    <!-- TERMS -->
+    <section id="terms" aria-labelledby="terms-title">
+      <h2 id="terms-title">الشروط والأحكام</h2>
+      <p class="muted xsmall">آخر تحديث: <time datetime="2025-11-06">6 نوفمبر 2025</time></p>
+
+      <h3>١) قبول الشروط</h3>
+      <p>باستخدامك هذا الموقع، فإنك تقر بقراءة الشروط والموافقة عليها. إذا لم توافق، يُرجى التوقف عن الاستخدام.</p>
+
+      <h3>٢) الاستخدام المسموح</h3>
+      <ul>
+        <li>استخدام قانوني وغير مسيء للبنية التقنية أو المحتوى.</li>
+        <li>عدم جمع بيانات المستخدمين أو استغلالها بدون موافقة صريحة.</li>
+      </ul>
+
+      <h3>٣) المحتوى والمعلومات</h3>
+      <p>نحرص على الدقة دون ضمان مطلق. المعلومات عامة وإرشادية وليست بديلاً عن الاستشارة المهنية.</p>
+
+      <h3>٤) الملكية الفكرية</h3>
+      <p>جميع العلامات والنصوص والتصاميم حقوقها محفوظة لمالك الموقع أو مرخصة له. يُحظر النسخ أو إعادة النشر دون إذن مكتوب.</p>
+
+      <h3>٥) حدود المسؤولية</h3>
+      <p>لا نتحمل أي أضرار مباشرة أو غير مباشرة تنشأ عن استخدام الموقع، بالحد الذي يسمح به القانون.</p>
+
+      <h3>٦) الروابط الخارجية</h3>
+      <p>قد تتضمن الصفحات روابط لمواقع أخرى لا نتحكم فيها. الرجاء مراجعة سياسات تلك المواقع.</p>
+
+      <h3>٧) التغييرات على الشروط</h3>
+      <p>قد نحدّث هذه الشروط من وقت لآخر. يسري التحديث عند نشره على هذه الصفحة.</p>
+
+      <h3>٨) القانون والاختصاص</h3>
+      <p>يخضع أي نزاع للقوانين المحلية في نطاق مقر الشركة ما لم يُنص على خلاف ذلك.</p>
+    </section>
+
+    <!-- PRIVACY -->
+    <section id="privacy" aria-labelledby="privacy-title">
+      <h2 id="privacy-title">سياسة الخصوصية</h2>
+      <p class="muted xsmall">آخر تحديث: <time datetime="2025-11-06">6 نوفمبر 2025</time></p>
+
+      <h3>١) نطاق السياسة</h3>
+      <p>توضح هذه السياسة كيفية جمعنا لبياناتك الشخصية واستخدامها ومشاركتها وحمايتها عند استخدامك موقعنا وخدمات عروض التأمين.</p>
+
+      <h3>٢) البيانات التي نجمعها</h3>
+      <ul>
+        <li>بيانات تعريفية: الاسم، رقم الهاتف، البريد الإلكتروني.</li>
+        <li>بيانات استخدام: الصفحات التي تزورها، نوع الجهاز والمتصفح، عنوان IP مُختصر.</li>
+        <li>ملفات تعريف الارتباط: للتخصيص والتحليلات.</li>
+      </ul>
+
+      <h3>٣) الغرض والأساس القانوني</h3>
+      <ul>
+        <li>تقديم الخدمة والرد على الطلبات: <span class="kbd">تنفيذ عقد</span> أو <span class="kbd">مصلحة مشروعة</span>.</li>
+        <li>التسويق بإذن المستخدم: <span class="kbd">موافقة</span> قابلة للسحب.</li>
+        <li>الامتثال للمتطلبات القانونية: <span class="kbd">التزام قانوني</span>.</li>
+      </ul>
+
+      <h3>٤) مشاركة البيانات</h3>
+      <p>لا نبيع بياناتك. قد نشاركها مع مزودي خدمة موثوقين (استضافة، تحليلات، الاتصالات) بموجب اتفاقيات معالجة وواجب سرية.</p>
+
+      <h3>٥) الاحتفاظ بالبيانات</h3>
+      <p>نحتفظ بالبيانات فقط للمدة اللازمة للأغراض المبينة أو بما يقتضيه القانون، ثم نحذفها أو نُجري إخفاء الهوية.</p>
+
+      <h3>٦) حقوقك</h3>
+      <ul>
+        <li>الاطلاع على بياناتك وطلب نسخة.</li>
+        <li>التصحيح أو الحذف ضمن الحدود القانونية.</li>
+        <li>سحب الموافقة متى شئت دون التأثير على المعالجة السابقة.</li>
+        <li>الاعتراض على التسويق المباشر.</li>
+      </ul>
+
+      <h3>٧) أمن المعلومات</h3>
+      <p>نطبّق ضوابط تقنية وتنظيمية للحد من الوصول غير المصرح به. ومع ذلك، لا توجد وسيلة نقل أو تخزين إلكتروني آمنة تمامًا.</p>
+
+      <h3>٨) الكوكيز والتتبع</h3>
+      <p>نستخدم الكوكيز الأساسية والتحليلية. يمكنك إدارتها من خلال لافتة الموافقة أدناه أو إعدادات المتصفح.</p>
+
+      <h3>٩) التحويلات الدولية</h3>
+      <p>قد تُعالَج البيانات خارج بلدك وفق آليات قانونية مناسبة مثل بنود تعاقدية قياسية.</p>
+
+      <h3>١٠) تواصل معنا</h3>
+      <p id="contact-details">البريد: <a href="mailto:privacy@sectaminks">privacy@sectaminks</a> — الهاتف: <a href="tel:+962000000000">+962 00 000 0000</a></p>
+    </section>
+
+    <!-- COOKIES -->
+    <section id="cookies" aria-labelledby="cookies-title">
+      <h2 id="cookies-title">سياسة ملفات تعريف الارتباط (Cookies)</h2>
+      <p>نستخدم ملفات كوكيز لازمة للتشغيل وأخرى اختيارية للتحليلات. سنطلب موافقتك قبل تفعيل غير اللازمة.</p>
+      <ul>
+        <li>الضرورية: جلسات الدخول، الحماية.</li>
+        <li>التحليلية: قياس الأداء وتحسين التجربة.</li>
+      </ul>
+      <button class="btn" type="button" onclick="openCookieBanner()" aria-controls="cookie-banner">إدارة التفضيلات</button>
+    </section>
+
+  </main>
+
+  <footer id="contact" role="contentinfo">
+    <div class="container footer-grid">
+      <div>
+        <h3 style="margin-top:0">عن الموقع</h3>
+        <p class="small muted">منصة معلوماتية للتأمين على المركبات. المحتوى تعليمي عام. للحصول على عرض سعر رسمي، تواصل معنا.</p>
+      </div>
+      <div>
+        <h3 style="margin-top:0">روابط قانونية</h3>
+        <ul class="small">
+          <li><a href="#terms">الشروط والأحكام</a></li>
+          <li><a href="#privacy">سياسة الخصوصية</a></li>
+          <li><a href="#cookies">سياسة الكوكيز</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="margin-top:0">تواصل</h3>
+        <p class="small">البريد: <a href="mailto:support@sectaminks">support@sectaminks</a><br/>الهاتف: <a href="tel:+962000000000">+962 00 000 0000</a></p>
+        <p class="xsmall muted">آخر تحديث: <time datetime="2025-11-06">6 نوفمبر 2025</time></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div id="cookie-banner" class="cookie" role="dialog" aria-modal="true" aria-labelledby="cookie-title" style="position:fixed; inset-inline:12px; bottom:12px; display:none; background:var(--bg-soft); color:var(--text); border:1px solid rgba(255,255,255,.10); border-radius:16px; padding:16px; max-width:680px; box-shadow:var(--shadow)">
+    <div style="display:flex; gap:12px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap">
+      <div style="min-width:260px">
+        <h3 id="cookie-title" style="margin:.2rem 0">ملفات تعريف الارتباط</h3>
+        <p class="small muted" style="margin:0">نستخدم كوكيز أساسية لتشغيل الموقع وأخرى تحليلية اختيارية. يمكنك القبول أو الرفض أو تخصيص الاختيارات.</p>
+      </div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap">
+        <button class="btn" type="button" onclick="setConsent('reject')">رفض الاختيارية</button>
+        <button class="btn" type="button" onclick="setConsent('custom')">تخصيص</button>
+        <button class="btn" type="button" onclick="setConsent('accept')" style="background:linear-gradient(180deg, color-mix(in oklab, var(--brand) 40%, transparent), color-mix(in oklab, var(--brand-2) 40%, transparent)); color:white">قبول الكل</button>
+      </div>
+    </div>
+    <fieldset id="cookie-custom" style="display:none; margin-top:10px; border:1px solid rgba(255,255,255,.10); border-radius:12px; padding:10px">
+      <legend class="xsmall muted">تخصيص</legend>
+      <label class="small"><input type="checkbox" id="analytics" /> تفعيل الكوكيز التحليلية</label>
+    </fieldset>
+  </div>
+
+  <script>
+    // Accessible skip link reveal on focus
+    const skip = document.querySelector('a[href="#main"]');
+    skip.addEventListener('focus', ()=>{ skip.style.top = '8px'; });
+    skip.addEventListener('blur', ()=>{ skip.style.top = '-40px'; });
+
+    // Cookie banner logic (minimal)
+    function getConsent(){try{return JSON.parse(localStorage.getItem('consent_v1')||'null')}catch{return null}}
+    function saveConsent(obj){localStorage.setItem('consent_v1', JSON.stringify(obj))}
+    function showCookieBanner(){ document.getElementById('cookie-banner').style.display='block' }
+    function hideCookieBanner(){ document.getElementById('cookie-banner').style.display='none' }
+    function openCookieBanner(){ showCookieBanner() }
+    function setConsent(mode){
+      if(mode==='accept'){ saveConsent({necessary:true, analytics:true, ts:Date.now()}); hideCookieBanner() }
+      if(mode==='reject'){ saveConsent({necessary:true, analytics:false, ts:Date.now()}); hideCookieBanner() }
+      if(mode==='custom'){
+        const fs = document.getElementById('cookie-custom');
+        fs.style.display = fs.style.display==='none' ? 'block' : 'none';
+        const analytics = document.getElementById('analytics');
+        analytics.addEventListener('change', ()=>{
+          saveConsent({necessary:true, analytics:analytics.checked, ts:Date.now()});
+        }, { once:true });
+      }
+    }
+    if(!getConsent()) showCookieBanner();
+  </script>
+
+</body>
 </html>
